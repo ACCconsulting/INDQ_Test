@@ -1,0 +1,13 @@
+D:\Programacion\INDQTest\INDQ\Aplicacion\bin\Debug\netcoreapp3.0\Aplicacion.deps.json
+D:\Programacion\INDQTest\INDQ\Aplicacion\bin\Debug\netcoreapp3.0\Aplicacion.dll
+D:\Programacion\INDQTest\INDQ\Aplicacion\bin\Debug\netcoreapp3.0\Aplicacion.pdb
+D:\Programacion\INDQTest\INDQ\Aplicacion\bin\Debug\netcoreapp3.0\Dominio.dll
+D:\Programacion\INDQTest\INDQ\Aplicacion\bin\Debug\netcoreapp3.0\Persistencia.dll
+D:\Programacion\INDQTest\INDQ\Aplicacion\bin\Debug\netcoreapp3.0\Dominio.pdb
+D:\Programacion\INDQTest\INDQ\Aplicacion\bin\Debug\netcoreapp3.0\Persistencia.pdb
+D:\Programacion\INDQTest\INDQ\Aplicacion\obj\Debug\netcoreapp3.0\Aplicacion.csprojAssemblyReference.cache
+D:\Programacion\INDQTest\INDQ\Aplicacion\obj\Debug\netcoreapp3.0\Aplicacion.AssemblyInfoInputs.cache
+D:\Programacion\INDQTest\INDQ\Aplicacion\obj\Debug\netcoreapp3.0\Aplicacion.AssemblyInfo.cs
+D:\Programacion\INDQTest\INDQ\Aplicacion\obj\Debug\netcoreapp3.0\Aplicacion.csproj.CopyComplete
+D:\Programacion\INDQTest\INDQ\Aplicacion\obj\Debug\netcoreapp3.0\Aplicacion.dll
+D:\Programacion\INDQTest\INDQ\Aplicacion\obj\Debug\netcoreapp3.0\Aplicacion.pdb

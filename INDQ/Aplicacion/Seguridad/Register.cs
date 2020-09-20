@@ -1,4 +1,5 @@
-﻿using Dominio;
+﻿using Aplicacion.Helpers;
+using Dominio;
 using Dominio.Dto;
 using FluentValidation;
 using MediatR;
@@ -16,7 +17,7 @@ namespace Aplicacion.Seguridad
 {
     public class Register
     {
-        public class Ejecuta : IRequest<UserDto>
+        public class Users : IRequest<UserDto>
         {
             public string FirstName { get; set; }
             public string LastName { get; set; }
@@ -25,8 +26,26 @@ namespace Aplicacion.Seguridad
             public string Password { get; set; }
         }
 
+        public class ValidationExecute : AbstractValidator<Users>
+        {
+           
+            private bool BeAValidPostcode(string FirstName)
+            {
+                int valor = 0;
+                return !int.TryParse(FirstName, out valor);
+            }
 
-        public class Manejador : IRequestHandler<Ejecuta, UserDto>
+            public ValidationExecute()
+            {
+                RuleFor(x => x.FirstName).Must(BeAValidPostcode).WithMessage("Solo acepta letras");
+                RuleFor(x => x.LastName).NotEmpty();
+                RuleFor(x => x.Email).NotEmpty().EmailAddress() ;
+                RuleFor(x => x.LastName).NotEmpty();
+                RuleFor(x => x.Password).NotEmpty().MinimumLength(8).WithMessage("Password debe ser mayor o igual que 8 caracteres, Una mayuscula y un caracter especial");
+            }
+           
+        }
+        public class Manejador : IRequestHandler<Users, UserDto>
         {
             private readonly IndqContext _context;
             private readonly UserManager<User> _userManager;
@@ -38,27 +57,16 @@ namespace Aplicacion.Seguridad
                 //_ijwtGenerator = jwtGenerator;
             }
 
-            public class ExecuteValidation: AbstractValidator<Ejecuta>
-            {
-                public ExecuteValidation()
-                {
-                    RuleFor(x => x.FirstName).NotEmpty();
-                    RuleFor(x => x.LastName).NotEmpty();
-                    RuleFor(x => x.Email).NotEmpty();
-                    RuleFor(x => x.Password).NotEmpty();
-                    RuleFor(x => x.Gender).NotEmpty();
-                }
-            }
+         
 
-            public async Task<UserDto> Handle(Ejecuta request, CancellationToken cancellationToken)
+            public async Task<UserDto> Handle(Users request, CancellationToken cancellationToken)
             {
                 var existeEmail = await _context.Users.Where(e => e.Email == request.Email).AnyAsync();
 
                 if (existeEmail)
                 {
-                    //throw new ManejadorExcepcion(System.Net.HttpStatusCode.BadRequest, new { Mensaje = "Existe un usuario registrado con este email" });
-                    //se tiene que regresar el codigo 403
-                    throw new Exception("Usuario ya registrado con ese correo");
+                    throw new HandlereException(System.Net.HttpStatusCode.Forbidden, new { Mensaje = "La cuenta con ese correo electrónico ya existe" });
+        
                 }
 
                 var User = new User
@@ -84,7 +92,7 @@ namespace Aplicacion.Seguridad
                     };
                 }
 
-                throw new Exception("Ocurrio un Error al Crearse el usuario");
+                throw new HandlereException(System.Net.HttpStatusCode.InternalServerError, new { Mensaje = "Ocurrio un erro al registar los datos" });
 
 
             }

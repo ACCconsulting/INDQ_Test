@@ -15,14 +15,14 @@ namespace Persistencia
         }
 
       public  DbSet<Events> Events { get; set; }
-      //public  DbSet<Attendance> Attendances { get; set; }
+      public  DbSet<Attendance> Attendances { get; set; }
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
             //modelBuilder.Entity<Attendance>().HasOne(u => u.User).WithMany().HasForeignKey(f => f.UserId);
-            modelBuilder.Entity<Attendance>().HasOne(u => u.Events).WithMany().HasForeignKey(f => f.EventsId);
+            //modelBuilder.Entity<Attendance>().HasOne(u => u.Events).WithMany().HasForeignKey(f => f.EventsId);
 
         }
 

@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebAPI</name>
+    </assembly>
+    <members>
+        <member name="T:WebAPI.Controllers.EventsController">
+            <summary>
+            Todo sobre Eventos
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.EventsController.GetAll(System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Decimal},System.Nullable{System.Decimal},System.String,System.Double)">
+            <summary>
+            Consultar Listao de Eventos
+            </summary>
+            <param name="page">Pagina Actual</param>
+            <param name="limit">Registros por pagina</param>
+            <param name="lat"></param>
+            <param name="lng"></param>
+            <param name="title">Titulo del Evento</param>
+            <param name="distancia">Distancia Agregar mayor a 0  para obtener mas registros</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.EventsController.Attattendance(System.Int32)">
+            <summary>
+            Marcar asistencia a evento
+            </summary>
+            <param name="eventId">ID del evento</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.EventsController.AttattendanceDelete(System.Int32)">
+            <summary>
+            Desmarca asistencia a un evento para el usuario actual
+            </summary>
+            <param name="eventId">ID del evento para desmarcar la asistencia</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebAPI.Controllers.UsersController">
+            <summary>
+            Operaciones de usuarios
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.UsersController.Login(Aplicacion.Seguridad.LoginUser.Login)">
+            <summary>
+            Inicio de sesión  
+            </summary>
+            <param name="data">Usuario a registrar</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.UsersController.Register(Aplicacion.Seguridad.Register.Users)">
+            <summary>
+            Registro de usuario
+            </summary>
+            <param name="Register">Credenciales de acceso</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using NetTopologySuite.Geometries;
 using Persistencia;
 
 namespace Persistencia.Migrations
@@ -38,7 +39,7 @@ namespace Persistencia.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Attendance");
+                    b.ToTable("Attendances");
                 });
 
             modelBuilder.Entity("Dominio.Events", b =>
@@ -59,6 +60,9 @@ namespace Persistencia.Migrations
 
                     b.Property<string>("Imagen")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<Point>("Location")
+                        .HasColumnType("geography");
 
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");

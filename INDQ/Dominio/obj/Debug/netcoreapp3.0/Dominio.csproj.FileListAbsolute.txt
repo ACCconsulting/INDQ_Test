@@ -1,6 +1,7 @@
 D:\Programacion\INDQTest\INDQ\Dominio\bin\Debug\netcoreapp3.0\Dominio.deps.json
 D:\Programacion\INDQTest\INDQ\Dominio\bin\Debug\netcoreapp3.0\Dominio.dll
 D:\Programacion\INDQTest\INDQ\Dominio\bin\Debug\netcoreapp3.0\Dominio.pdb
+D:\Programacion\INDQTest\INDQ\Dominio\obj\Debug\netcoreapp3.0\EFCoreSqlServerNetTopologySuite.cs
 D:\Programacion\INDQTest\INDQ\Dominio\obj\Debug\netcoreapp3.0\Dominio.AssemblyInfoInputs.cache
 D:\Programacion\INDQTest\INDQ\Dominio\obj\Debug\netcoreapp3.0\Dominio.AssemblyInfo.cs
 D:\Programacion\INDQTest\INDQ\Dominio\obj\Debug\netcoreapp3.0\Dominio.dll
